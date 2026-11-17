@@ -1,0 +1,17 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "app",
+  "shape": "app screen",
+  "theme": "ink",
+  "axes": "light/grotesk-sans/chromatic-teal",
+  "nav": "top bar, wordmark and name button, two tabs",
+  "signature": "this week row of the rota set large over its two confirmations",
+  "waived": [
+   "22"
+  ],
+  "prompt": "a phone tool a shared house uses to see whose turn it is to put the bins out",
+  "date": "2026-11-16"
+ }
+]
