@@ -58,15 +58,12 @@ export function pickupFor(monday) {
 }
 
 /**
- * The week the house should be looking at. A week stays current until the day
- * after pickup (so the bins can be brought back in), or until it is fully done.
+ * The week the house should be looking at: this week's until pickup day ends,
+ * then next week's (from Tuesday, or Wednesday after a holiday Monday).
  */
-export function currentMonday(today, isDone = () => false) {
+export function currentMonday(today) {
   const monday = mondayOf(today);
-  const sincePickup = diffDays(today, pickupFor(monday).date);
-  if (sincePickup > 1) return addDays(monday, 7);
-  if (sincePickup > 0 && isDone(monday)) return addDays(monday, 7);
-  return monday;
+  return diffDays(today, pickupFor(monday).date) > 0 ? addDays(monday, 7) : monday;
 }
 
 /** Whose turn it is in `list` for the week starting on `monday`. */
